@@ -42,7 +42,7 @@ end
     respond_to do |format|
       if @topic.save
         format.html { redirect_to [@movie, @topic], notice: 'Topic was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
+        format.json { render :show, status: :created }
       else
         format.html { render :new }
         format.json { render json: @topic.errors, status: :unprocessable_entity }
@@ -62,7 +62,7 @@ end
     respond_to do |format|
       if @topic.update(topic_params)
         format.html { redirect_to [@movie, @topic], notice: 'Topic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @topic }
+        format.json { render :show, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @topic.errors, status: :unprocessable_entity }

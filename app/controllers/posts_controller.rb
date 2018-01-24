@@ -46,7 +46,7 @@ end
     respond_to do |format|
       if @post.save
         format.html { redirect_to [@movie, @topic], notice: 'Post was successfully created.' }
-		format.json { render :show, status: :created, location: @post }
+		format.json { render :show, status: :created }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -65,9 +65,9 @@ end
 end
   def update
     respond_to do |format|
-	  if @post.update(topic_params)
+	  if @post.update(post_params)
         format.html { redirect_to [@movie, @topic], notice: 'Topic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @topic }
+        format.json { render :show, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @topic.errors, status: :unprocessable_entity }

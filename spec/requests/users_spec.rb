@@ -66,6 +66,6 @@ RSpec.describe "Users", :type => :request do
     }
 
     expect(response).to have_http_status(204)
-    expect(Users.exists?(@user.id)).to eq(false)
+    expect(User.exists?(@user.id)).to eq(false)
   end
 end
