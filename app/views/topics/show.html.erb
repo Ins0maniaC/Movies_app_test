@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @topic.title %> by <%= link_to @topic.user.name, @topic.user %></h1>
+<h2><%= link_to @movie.name, @movie %></h2>
+
+<hr>
+<h1>Lista odpowiedzi</h1>
+<% if @topic.posts.length == 0 %>
+	Nie ma żadnych odpowiedzi
+<% else %>
+	<ul>
+	<% @topic.posts.each do |post| %>
+		<li>
+			<strong><%= post.user.name %> pisze:</strong> <%= post.body %>
+		</li>
+	<% end %>
+	</ul>
+<% end %>
+
+<hr>
+<% if logged_in? && current_user.follows?(@movie) %>
+<%= link_to "Dodaj odpowiedź", new_movie_topic_post_path(@movie,@topic) %>
+<% end %>
+<hr>
+
+<%= link_to 'Edit', edit_movie_topic_path(@movie, @topic) %> |
+<%= link_to 'Back', @movie %>

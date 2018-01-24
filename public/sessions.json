@@ -1,0 +1,54 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "sessions",
+  "apis": [
+    {
+      "path": "/login",
+      "operations": [
+        {
+          "summary": "Gather\ta\ttoken",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "session[index]",
+              "type": "string",
+              "description": "Users\tindex",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "session[password]",
+              "type": "string",
+              "description": "Users\tpassword",
+              "required": true
+            }
+          ],
+          "nickname": "Sessions#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/logout",
+      "operations": [
+        {
+          "summary": "Invalidate a token",
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "nickname": "Sessions#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

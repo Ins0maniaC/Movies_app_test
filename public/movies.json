@@ -1,0 +1,159 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "movies",
+  "apis": [
+    {
+      "path": "/movies/{id}/follow",
+      "operations": [
+        {
+          "summary": "Follows a Movie",
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Movie id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Movies#follow",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/movies/{id}/unfollow",
+      "operations": [
+        {
+          "summary": "Unfollows a Movie",
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Movie id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Movies#unfollow",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/movies",
+      "operations": [
+        {
+          "summary": "Returns all Movies",
+          "notes": "Notes...",
+          "nickname": "Movies#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/movies",
+      "operations": [
+        {
+          "summary": "Create a movie",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "movie[name]",
+              "type": "string",
+              "description": "Movie name",
+              "required": true
+            }
+          ],
+          "nickname": "Movies#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/movies/{id}",
+      "operations": [
+        {
+          "summary": "Returns one movie",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Movie id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Movies#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/movies/{id}",
+      "operations": [
+        {
+          "summary": "Update a movie",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Course id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "movie[name]",
+              "type": "string",
+              "description": "Movie name",
+              "required": true
+            }
+          ],
+          "nickname": "Movies#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/movies/{id}",
+      "operations": [
+        {
+          "summary": "Destroys a movie",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Movie id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "Movies#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

@@ -1,0 +1,36 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "apis": [
+    {
+      "path": "/static.{format}",
+      "description": "Static"
+    },
+    {
+      "path": "/sessions.{format}",
+      "description": "Authentication"
+    },
+    {
+      "path": "/movies.{format}",
+      "description": "Movies"
+    },
+    {
+      "path": "/users.{format}",
+      "description": "Users"
+    },
+    {
+      "path": "/posts.{format}",
+      "description": "Posts"
+    },
+    {
+      "path": "/topics.{format}",
+      "description": "Topics"
+    }
+  ],
+  "authorizations": null,
+  "info": {
+    "title": "Movies\tforum",
+    "description": "Example\trails\tapp"
+  }
+}

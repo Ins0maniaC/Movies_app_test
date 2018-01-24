@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @movie.name %></h1>
+
+<% if logged_in? %>
+  <% unless current_user.follows?(@movie) %>
+    <%= link_to( "Zapisz się do dyskusji", action: :follow) %>
+  <% else %>
+    <%= link_to( "Wypisz się z dyskusji", action: :unfollow) %>
+  <% end %>
+<% end %>
+
+<hr>
+<h1>Zapisani użytkownicy</h1>
+<ul>
+<% @movie.users.each do |user| %>
+  <li><%= link_to user.name, user %></li>
+<% end %>
+</ul>
+
+<hr>
+<h1>Lista tematów</h1>
+<% if @movie.topics.length == 0 %>
+  Nie ma żadnego tematu
+<% else %>
+  <% @movie.topics.each do |topic| %>
+    <%= link_to [@movie, topic] do %>
+    <h4><%= topic.title %> by <%= topic.user.name %></h4>
+    <% end %>
+    <% topic.posts.each do |post| %>
+      <p>
+        <%= post.body %>
+      </p>
+      <h6>by <%= post.user.name %></h6>
+    <% end %>
+  <% end %>
+<% end %>
+
+<hr>
+
+<% if logged_in? && current_user.follows?(@movie) %>
+  <%= link_to "Dodaj temat", new_movie_topic_path(@movie) %>
+<% end %>

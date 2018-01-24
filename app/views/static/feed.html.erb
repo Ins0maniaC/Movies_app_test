@@ -1,0 +1,15 @@
+<ul>
+<%	for	movie	in	current_user.movies	do	%>
+		<li><%=	movie.name	%></li>
+		<ul>
+		<%	for	topic	in	movie.topics	do	%>
+				<li><%=	topic.title	%></li>
+				<ul>
+						<%	for	post	in	topic.posts	%>
+								<li><%=	post.body	%></li>
+						<%	end	%>
+				</ul>
+		<%	end	%>
+		</ul>
+<%	end	%>
+</ul>
