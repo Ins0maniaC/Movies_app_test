@@ -17,5 +17,5 @@ movie_array = []
     :name => children.css('tytul').inner_text
     )
     end
-    movies_to_lock = Movie.where.not(name: movie_array)
-    movies_to_lock.lock!_all
+    movies_to_delete = Movie.where.not(name: movie_array)
+    movies_to_delete.destroy_all
